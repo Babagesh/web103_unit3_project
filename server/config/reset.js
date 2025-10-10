@@ -1,5 +1,5 @@
-import pool from './database.js'
-import dotenv from 'dotenv.js'
+import './dotenv.js'
+import {pool} from './database.js'
 import events from '../data/eventData.js'
 
 const createEventsTable = async() => {
@@ -11,11 +11,11 @@ const createEventsTable = async() => {
         name VARCHAR(255) NOT NULL,
         date VARCHAR(50) NOT NULL,
         length VARCHAR(50) NOT NULL,
-        image VARCHAR(50) NOT NULL
+        image VARCHAR(1000) NOT NULL
     )
-`
+    `
     try{
-        const res = pool.query(createTableQuery)
+        const res = await pool.query(createTableQuery)
         console.log('table created')
     }
     catch(err)
@@ -26,7 +26,7 @@ const createEventsTable = async() => {
 
 const seedEventsTable = async() => {
     await createEventsTable()
-    events.forEach(event => {
+    for(const event of events){
         const query = 
         {
             text: `INSERT INTO events (name, date, length, image) VALUES ($1,$2,$3,$4)`
@@ -37,14 +37,13 @@ const seedEventsTable = async() => {
             event.length,
             event.image
         ]
-        pool.query(text, values, (req, res) => {
-            if(err)
-            {
-                console.error('error inserting values')
-            }
+        try {
+            await pool.query(query.text, values)
             console.log(`${event.name} added`)
-        })
-    })
+        } catch(err) {
+            console.error('error inserting values')
+        }
+    }
 }
 
 seedEventsTable()
