@@ -40,14 +40,21 @@ Here's a walkthrough of implemented required features:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Loom
-
+<div>
+    <a href="https://www.loom.com/share/2acb269998b648dca7008f053223b133">
+      <p>UnityGrid Plaza - 10 October 2025 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/2acb269998b648dca7008f053223b133">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/2acb269998b648dca7008f053223b133-28f453859fa3fc1a-full-play.gif">
+    </a>
+  </div>
 ## Notes
 
 Describe any challenges encountered while building the app or any additional context you'd like to add.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2025] [Bhagyesh Jethwani]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
