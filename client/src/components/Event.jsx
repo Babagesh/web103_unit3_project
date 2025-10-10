@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import '../css/Event.css'
 
-const Event = (props) => {
+const Event = (event) => {
 
-    const [event, setEvent] = useState([])
+    //const [event, setEvent] = useState([])
     const [time, setTime] = useState([])
     const [remaining, setRemaining] = useState([])
 
     useEffect(() => {
         (async () => {
             try {
-                const eventData = await EventsAPI.getEventsById(props.id)
-                setEvent(eventData)
+                //const eventData = await EventsAPI.getEventsById(props.id)
+                //setEvent(eventData)
             }
             catch (error) {
                 throw error
@@ -51,7 +51,7 @@ const Event = (props) => {
             <div className='event-information-overlay'>
                 <div className='text'>
                     <h3>{event.title}</h3>
-                    <p><i className="fa-regular fa-calendar fa-bounce"></i> {event.date} <br /> {time}</p>
+                    <p><i className="fa-regular fa-calendar fa-bounce"></i> {event.date} <br /> {event.time}</p>
                     <p id={`remaining-${event.id}`}>{remaining}</p>
                 </div>
             </div>

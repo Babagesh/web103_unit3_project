@@ -31,3 +31,16 @@ header {
     margin-right: 20px;
     margin-left: 20px;
 }
+
+.events {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
