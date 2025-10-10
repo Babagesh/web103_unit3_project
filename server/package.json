@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "reset": "cd config && node --require dotenv/config reset.js",
     "start": "npm run reset && nodemon --require dotenv/config server.js"
@@ -10,5 +11,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "pg": "^8.16.3"
+  }
 }
